@@ -1,10 +1,11 @@
 Class {
-	#name : #BaselineOfStateSpecs,
-	#superclass : #BaselineOf,
-	#category : #BaselineOfStateSpecs
+	#name : 'BaselineOfStateSpecs',
+	#superclass : 'BaselineOf',
+	#category : 'BaselineOfStateSpecs',
+	#package : 'BaselineOfStateSpecs'
 }
 
-{ #category : #baselines }
+{ #category : 'baselines' }
 BaselineOfStateSpecs >> baseline: spec [
 	<baseline>
 	
@@ -25,7 +26,7 @@ BaselineOfStateSpecs >> baseline: spec [
 			
 		spec 
 			baseline: 'Ghost' with: [
-		 	    spec repository: 'github://pharo-ide/Ghost:v6.0.2'];
+		 	    spec repository: 'github://pharo-ide/Ghost:v7.0.1'];
 			project: 'GhostCore' copyFrom: 'Ghost' with: [
 		 	    spec	loads: #('ObjectGhost')];
 			project: 'GhostTests' copyFrom: 'Ghost' with: [
@@ -44,7 +45,7 @@ BaselineOfStateSpecs >> baseline: spec [
 	]
 ]
 
-{ #category : #accessing }
+{ #category : 'accessing' }
 BaselineOfStateSpecs >> projectClass [
 	^ [ self class environment at: #MetacelloCypressBaselineProject ]
 		on: NotFound
